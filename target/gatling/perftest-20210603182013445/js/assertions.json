@@ -1,0 +1,10 @@
+{
+  "simulation": "perftest",
+  "simulationId": "perftest",
+  "start": 1622744413445,
+  "description": "",
+  "scenarios": ["Scenario Name"],
+  "assertions": [
+
+  ]
+}
