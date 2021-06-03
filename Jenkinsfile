@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage("Build Maven") {
             steps {
-                sh 'mvn -B clean package'
+                withMaven {
+                sh 'mvn -B clean package' 
+                }
             }
         }
         stage("Run Gatling") {
