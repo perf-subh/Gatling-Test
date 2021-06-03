@@ -1,10 +1,8 @@
 pipeline {
-    
+    agent any
     stages {
     stage ('build') {
       steps {
-
-        // JENKINSHOME is just a name to help readability
         withEnv(['PATH+MAVEN_HOME=/usr/local/Cellar/maven/3.8.1/libexec/bin']) {
           echo "PATH is: $PATH"
         }
