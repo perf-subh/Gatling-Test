@@ -1,18 +1,16 @@
 pipeline {
-    agent any
-        tools {
-        maven 'Maven 3.8.1'
-        jdk 'jdk8'
-    }
+    
     stages {
-        stage ("Initialize") {
-            steps {
-                sh '''
-                    export MAVEN_HOME=/usr/local/Cellar/maven/3.8.1/libexec
-                    export PATH=$PATH:$MAVEN_HOME/bin
-                '''
-            }
+    stage ('build') {
+      steps {
+
+        // JENKINSHOME is just a name to help readability
+        withEnv(['PATH+MAVEN_HOME=/usr/local/Cellar/maven/3.8.1/libexec/bin']) {
+          echo "PATH is: $PATH"
         }
+      }
+    }
+  }
     stages {
         stage("Build Maven") {
             steps {
