@@ -8,8 +8,8 @@ pipeline {
         stage ("Initialize") {
             steps {
                 sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
+                    export MAVEN_HOME=/usr/local/Cellar/maven/3.8.1/libexec
+                    export PATH=$PATH:$MAVEN_HOME/bin
                 '''
             }
         }
